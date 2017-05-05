@@ -1,10 +1,64 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>title</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gift Exchange App</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.4.1/css/bulma.min.css">
 </head>
+<style>
+    body {
+        background: #04c4d9;
+    }
+    .nav {
+        background: #04c4d9;
+    }
+    .topcontent {
+        margin: auto;
+        text-align: center;
+    }
+    .topcontent h1 {
+        color: #fff;
+        font-weight: 800;
+        margin-top: 0.2em;
+    }
+    .topcontent img {
+        margin-top: 2em;
+        margin-bottom: -2em;
+    }
+
+    @media (min-width: 600px) and (orientation: landscape) {
+        img {
+            max-width: 20%;
+        }
+
+    }
+
+</style>
+
 <body>
-{% block content %}{% endblock %}
+<nav class="nav">
+    <div class="nav-left">
+        <a class="nav-item" href="/">
+            Gift Exchange
+        </a>
+    </div>
+
+    <div class="nav-center">
+        <a class="nav-item" href="/">
+            Home
+        </a>
+        <a class="nav-item" href="https://github.com/yosukesuzuki/gift-exchange-webapp">
+            Github
+        </a>
+    </div>
+</nav>
+<div class="content">
+    {% block content %}
+    {% endblock %}
+</div>
+<footer class="footer">
+    Icon made by <a href="http://www.freepik.com/">Freepik</a> from <a href="www.flaticon.com">www.flaticon.com</a>
+</footer>
 </body>
 </html>
