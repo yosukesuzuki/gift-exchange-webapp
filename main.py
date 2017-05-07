@@ -15,6 +15,7 @@
 # [START app]
 import logging
 
+from models import Events
 from flask import Flask, render_template
 
 
