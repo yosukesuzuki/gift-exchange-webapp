@@ -7,21 +7,43 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.4.1/css/bulma.min.css">
 </head>
 <style>
+    html {
+        background: #ddd;
+    }
     body {
         background: #04c4d9;
     }
+
     .nav {
         background: #04c4d9;
     }
-    .topcontent {
+
+    .card {
+        background: #04c4d9;
+    }
+
+    .topcontent, .inputpeople {
         margin: auto;
         text-align: center;
     }
+
     .topcontent h1 {
         color: #fff;
         font-weight: 800;
         margin-top: 0.2em;
     }
+
+    .inputpeople h1, .inputpeople h2 {
+        color: #fff;
+        font-weight: 800;
+    }
+
+    .inputpeople h2 span {
+        width: 2.5em;
+        display: inline-block;
+        text-align: center;
+    }
+
     .topcontent img {
         margin-top: 2em;
         margin-bottom: -2em;
@@ -31,7 +53,15 @@
         img {
             max-width: 20%;
         }
-
+    }
+    @media (min-width: 724px) {
+        .topcontent, .inputpeople {
+            height: 70vh;
+            margin-top: 10vh;
+        }
+    }
+    .marketing {
+        background: white;
     }
 
 </style>
@@ -58,7 +88,7 @@
     {% endblock %}
 </div>
 <footer class="footer">
-    Icon made by <a href="http://www.freepik.com/">Freepik</a> from <a href="www.flaticon.com">www.flaticon.com</a>
+    <div>Icons made by <a href="http://www.freepik.com" title="Freepik">Freepik</a> from <a href="http://www.flaticon.com" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
 </footer>
 </body>
 </html>

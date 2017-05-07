@@ -1,12 +1,50 @@
 {% extends "base.html" %}
 {% block content %}
-    <div>
-        <h1>Who join?</h1>
-        <div class="field">
-            <label class="label">Message</label>
-            <p class="control">
-                <textarea class="textarea" placeholder="Textarea"></textarea>
+    <div class="inputpeople">
+        <h1 class="title is-1">Who join?</h1>
+        <h2 class="subtitle is-1"><span class="numpeople">0</span>&nbsp;people</h2>
+        <form method="post" action="/generated">
+            <div class="columns">
+                <div class="column is-half is-offset-one-quarter">
+                    <div class="field">
+                        <label class="label">list of people</label>
+                        <p class="control">
+                    <textarea class="textarea is-large"
+                              placeholder="input name, one name per line"></textarea>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <p>
+                <button class="button is-primary is-inverted is-outlined is-large" disabled>Generate</button>
             </p>
-        </div>
+        </form>
     </div>
+    <script>
+        function countPeople() {
+            // event handling code for sane browsers
+            let rawArray = area.value.split('\n');
+            var resultArray = [];
+            for (let line of rawArray) {
+                if (line != '') {
+                    resultArray.push(line);
+                }
+            }
+            var resultNum = resultArray.length;
+            console.log(resultNum);
+            document.querySelector('span.numpeople').innerText = resultNum;
+            if (resultNum > 1) {
+                document.querySelector('.button').removeAttribute('disabled');
+            } else {
+                document.querySelector('.button').setAttribute('disabled', 'disabled');
+            }
+        }
+        var area = document.querySelector('textarea');
+        if (area.addEventListener) {
+            area.addEventListener('input', countPeople, false);
+        }
+        document.addEventListener("DOMContentLoaded", function(event) {
+            countPeople();
+        });
+    </script>
 {% endblock %}
