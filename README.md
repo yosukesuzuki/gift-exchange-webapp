@@ -1,11 +1,15 @@
-# App Engine Standard Flask Hello World
+# App Engine Standard Flask
 
-This sample shows how to use [Flask](http://flask.pocoo.org/) with Google App
-Engine Standard.
+For test env
 
-Before running or deploying this application, install the dependencies using
-[pip](http://pip.readthedocs.io/en/stable/):
+```
+pip install pytest
+pip install pyyaml
+```
 
-    pip install -t lib -r requirements.txt
+Set python path for local test
 
-For more information, see the [App Engine Standard README](../../README.md)
+```
+PYTHONPATH="/path/to/google-cloud-sdk/platform/google_appengine:$PYTHONPATH"
+export PYTHONPATH
+```
