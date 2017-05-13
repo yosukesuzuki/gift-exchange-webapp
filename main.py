@@ -15,9 +15,12 @@
 # [START app]
 import logging
 
-from models import Events
-from flask import Flask, render_template
+from flask import Flask, render_template, redirect, url_for, request
+from google.appengine.api import users
+from google.appengine.ext import ndb
 
+from models import Events
+from utils import generate_combination
 
 app = Flask(__name__)
 
@@ -32,9 +35,31 @@ def start():
     return render_template('start.html')
 
 
+@app.route('/generated', methods=['GET', 'POST'])
+def generate():
+    login_user = users.get_current_user()
+    attendee_list_raw = request.form['attendee_list']
+    attendee_list = []
+    for u in attendee_list_raw.split('\n'):
+        if u.strip():
+            attendee_list.append(u.strip())
+    event = Events(user=login_user, attendee_list=attendee_list,
+                   attendee_combination=generate_combination(attendee_list))
+    event_key = event.put()
+    return redirect(url_for('generated', data_store_key=event_key.urlsafe()))
+
+
+@app.route('/generated/<data_store_key>', methods=['GET', 'POST'])
+def generated(data_store_key):
+    event_key = ndb.Key(urlsafe=data_store_key)
+    event = event_key.get()
+    return str(event.attendee_combination)
+
+
 @app.errorhandler(500)
 def server_error(e):
     # Log the error and stacktrace.
     logging.exception('An error occurred during a request.')
     return 'An internal error occurred.', 500
+
 # [END app]
