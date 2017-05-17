@@ -13,6 +13,9 @@ handlers:
 - url: /img/
   static_dir: img/
   expiration: "1m"
+- url: /js/
+  static_dir: js/
+  expiration: "1m"
 - url: /start.*
   script: main.app
   login: required

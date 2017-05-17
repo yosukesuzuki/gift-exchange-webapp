@@ -53,7 +53,7 @@ def generate():
 def generated(data_store_key):
     event_key = ndb.Key(urlsafe=data_store_key)
     event = event_key.get()
-    return str(event.attendee_combination)
+    return render_template('generated.html', event=event)
 
 
 @app.errorhandler(500)

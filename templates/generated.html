@@ -1,0 +1,41 @@
+<html>
+<head>
+    <link rel="stylesheet" href="/css/reveal.css">
+    <link rel="stylesheet" href="/css/theme/black.css">
+    <style>
+
+    </style>
+</head>
+<body>
+<div class="reveal">
+    <div class="slides">
+        {% for c in event.attendee_combination %}
+        <section
+        {% if loop.index % 5 == 0 %}
+            data-background-color="#F2137B"
+        {% elif loop.index % 5 == 1 %}
+            data-background-color="#F285B8"
+        {% elif loop.index % 5 == 2 %}
+            data-background-color="#04C4D9"
+        {% elif loop.index % 5 == 3 %}
+            data-background-color="#AABF06"
+        {% elif loop.index % 5 == 4 %}
+            data-background-color="#F28705"
+        {% else %}
+            data-background-color="#04C4D9"
+        {% endif %}
+                >
+            <h1>No.{{ loop.index }}</h1>
+            <h2><span style="font-size: 60%">from:&nbsp;</span>{{ c.from }}</h2>
+            <h3>&rArr;</h3>
+            <h2><span style="font-size: 60%">to:&nbsp;</span>{{ c.to }}</h2>
+        </section>
+        {% endfor %}
+    </div>
+</div>
+<script src="/js/reveal.js"></script>
+<script>
+    Reveal.initialize();
+</script>
+</body>
+</html>
