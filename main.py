@@ -16,9 +16,9 @@
 import logging
 
 from flask import Flask, render_template, redirect, url_for, request
+
 from google.appengine.api import users
 from google.appengine.ext import ndb
-
 from models import Events
 from utils import generate_combination
 
@@ -53,7 +53,20 @@ def generate():
 def generated(data_store_key):
     event_key = ndb.Key(urlsafe=data_store_key)
     event = event_key.get()
+    login_user = users.get_current_user()
+    if (event.user != login_user) and event.public is False:
+        return 'invalid request', 401
     return render_template('generated.html', event=event)
+
+
+@app.route('/result/<data_store_key>', methods=['GET'])
+def result(data_store_key):
+    event_key = ndb.Key(urlsafe=data_store_key)
+    event = event_key.get()
+    login_user = users.get_current_user()
+    if (event.user != login_user) and event.public is False:
+        return 'invalid request', 401
+    return render_template('result.html', event=event)
 
 
 @app.errorhandler(500)

@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block content %}
+    <div class="inputpeople">
+        <h1 class="title is-1">Results</h1>
+        <div>
+            <table class="table is-striped" style="width:60%;margin:auto;">
+                <thead>
+                <tr>
+                    <th>No.</th>
+                    <th>From</th>
+                    <th></th>
+                    <th>To</th>
+                </tr>
+
+                </thead>
+                <tbody>
+                {% for c in event.attendee_combination %}
+                    <tr>
+                        <td>{{ loop.index }}</td>
+                        <td>{{ c.from }}</td>
+                        <td>&rArr;</td>
+                        <td>{{ c.to }}</td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+{% endblock %}
