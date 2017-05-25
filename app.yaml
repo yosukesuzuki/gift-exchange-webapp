@@ -16,6 +16,10 @@ handlers:
 - url: /js/
   static_dir: js/
   expiration: "1m"
+- url: /favicon.ico
+  static_files: favicon.ico
+  upload: favicon.ico
+  mime_type: image/x-icon
 - url: /start.*
   script: main.app
   login: required
