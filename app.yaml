@@ -28,3 +28,25 @@ handlers:
   login: required
 - url: /.*
   script: main.app
+  secure: always
+
+skip_files: |
+  ^(.*/)?(
+  (_backup/.*)|
+  (\.cache/.*)|
+  (\.idea/.*)|
+  (app\.yaml)|
+  (app\.yml)|
+  (app\.yml)|
+  (index\.yaml)|
+  (index\.yml)|
+  (#.*#)|
+  (.*~)|
+  (.*\.py[co])|
+  (.*\.po)|
+  (.*\.pot)|
+  (\..*)|
+  (README\.md)|
+  (README\.pdf)|
+  (LICENSE)|
+  )$
