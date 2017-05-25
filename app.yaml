@@ -19,5 +19,8 @@ handlers:
 - url: /start.*
   script: main.app
   login: required
+- url: /history.*
+  script: main.app
+  login: required
 - url: /.*
   script: main.app

@@ -69,6 +69,12 @@ def result(data_store_key):
     return render_template('result.html', event=event)
 
 
+@app.route('/history', methods=['GET'])
+def history():
+    events = Events.query(Events.user==users.get_current_user()).fetch()
+    return render_template('history.html', events=events)
+
+
 @app.errorhandler(500)
 def server_error(e):
     # Log the error and stacktrace.
