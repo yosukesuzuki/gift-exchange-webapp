@@ -71,7 +71,7 @@ def result(data_store_key):
 
 @app.route('/history', methods=['GET'])
 def history():
-    events = Events.query(Events.user==users.get_current_user()).fetch()
+    events = Events.query(Events.user==users.get_current_user()).order(-Events.created_at).fetch()
     return render_template('history.html', events=events)
 
 
