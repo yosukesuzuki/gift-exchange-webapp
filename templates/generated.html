@@ -9,7 +9,7 @@
 <div class="reveal">
     <div class="slides">
         <section data-background-color="#04C4D9">
-            <div style="width:80%;margin:auto;padding-bottom: 7vh">{{ event.attendee_list|join(',')|safe }} will join. <br/>Are you ready?</div>
+            <div style="width:80%;margin:auto;padding-bottom: 7vh">{{ event.attendee_list|join(', ')|safe }} will join. <br/>Are you ready?</div>
             <h1 onclick="javascript:Reveal.next();">START</h1>
             <h3 onclick="javascript:history.back();">&#x21BA;Back</h3>
         </section>
