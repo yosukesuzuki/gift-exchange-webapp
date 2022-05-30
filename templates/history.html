@@ -1,23 +1,25 @@
-{% extends "base.html" %}
-{% block content %}
-    <div class="inputpeople">
-        <h1 class="title is-1">Your Exchange history</h1>
-        <div>
-            <table class="table is-striped" style="width:60%;margin:auto;">
-                <thead>
-                <tr>
-                    <th>Created</th>
-                </tr>
-
-                </thead>
-                <tbody>
-                {% for e in events %}
-                    <tr>
-                        <td><a href="{{ url_for('generated', data_store_key=e.key.urlsafe()) }}">{{ e.created_at }}</a></td>
-                    </tr>
-                {% endfor %}
-                </tbody>
-            </table>
-        </div>
-    </div>
+{% extends "base.html" %} {% block content %}
+<div class="inputpeople">
+  <h1 class="title is-1">Your Exchange history</h1>
+  <div>
+    <table class="table is-striped" style="width: 60%; margin: auto">
+      <thead>
+        <tr>
+          <th>Created</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for e in events %}
+        <tr>
+          <td>
+            <a href="{{ url_for('generated', data_store_key=e.key.urlsafe()) }}"
+              >{{ e.created_at }}</a
+            >
+          </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</div>
 {% endblock %}

@@ -1,34 +1,37 @@
-{% extends "base.html" %}
-{% block content %}
-    <div class="topcontent">
-        <img src="/img/gifts.svg" width="50%">
-        <h1 class="title is-1">It's party time</h1>
-        <h2>You can make gift exchange matching</h2>
-        <p>
-            <a class="button is-primary is-inverted is-outlined is-large" href="/start">Get Started</a>
-        </p>
+{% extends "base.html" %} {% block content %}
+<div class="topcontent">
+  <img src="/img/gifts.svg" width="50%" />
+  <h1 class="title is-1">It's party time</h1>
+  <h2>You can make gift exchange matchings</h2>
+  <p>
+    <a class="button is-primary is-inverted is-outlined is-large" href="/start"
+      >Get Started</a
+    >
+  </p>
+</div>
+<div class="card marketing">
+  <div class="card-content">
+    <div class="media">
+      <div class="media-content">
+        <p class="title is-4">Exchange Gifts at a party</p>
+      </div>
     </div>
-    <div class="card marketing">
-        <div class="card-content">
-            <div class="media">
-                <div class="media-content">
-                    <p class="title is-4">Exchange Gift at a party</p>
-                </div>
-            </div>
-            <div class="content">
-                Birthday party, events... Let's do gift exchange.
-                This app help you to make matching.
-            </div>
-        </div>
-        <div class="card-content">
-            <div class="media">
-                <div class="media-content">
-                    <p class="title is-4">Share the results</p>
-                </div>
-            </div>
-            <div class="content">
-                Finally,this app will output the exchange results as markdown text format. You can easily share it directly on this service or on Facebook, Twitter and so on.
-            </div>
-        </div>
+    <div class="content">
+      Birthday party, events... Let's do a gift exchange. This app helps you to
+      make matchings.
     </div>
+  </div>
+  <div class="card-content">
+    <div class="media">
+      <div class="media-content">
+        <p class="title is-4">Share the results</p>
+      </div>
+    </div>
+    <div class="content">
+      Finally, this app will output the exchange results in a markdown text
+      format. You can easily share it directly on this service or on Facebook,
+      Twitter and so on.
+    </div>
+  </div>
+</div>
 {% endblock %}

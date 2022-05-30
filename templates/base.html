@@ -1,106 +1,115 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Gift Exchange App</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.4.1/css/bulma.min.css">
-</head>
-<style>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.4.1/css/bulma.min.css"
+    />
+  </head>
+  <style>
     html {
-        background: #ddd;
+      background: #ddd;
     }
     body {
-        background: #04c4d9;
+      background: #04c4d9;
     }
 
     .nav {
-        background: #04c4d9;
+      background: #04c4d9;
     }
 
     .card {
-        background: #04c4d9;
+      background: #04c4d9;
     }
     .card.marketing {
-        margin-top: 1em;
+      margin-top: 1em;
     }
 
-    .topcontent, .inputpeople {
-        margin: auto;
-        text-align: center;
+    .topcontent,
+    .inputpeople {
+      margin: auto;
+      text-align: center;
     }
 
     .topcontent h1 {
-        color: #fff;
-        font-weight: 800;
-        margin-top: 0.2em;
+      color: #fff;
+      font-weight: 800;
+      margin-top: 0.2em;
     }
 
     .topcontent h2 {
-        margin-left:1em;
-        margin-right:1em;
+      margin-left: 1em;
+      margin-right: 1em;
     }
 
-    .inputpeople h1, .inputpeople h2 {
-        color: #fff;
-        font-weight: 800;
+    .inputpeople h1,
+    .inputpeople h2 {
+      color: #fff;
+      font-weight: 800;
     }
 
     .inputpeople h2 span {
-        width: 2.5em;
-        display: inline-block;
-        text-align: center;
+      width: 2.5em;
+      display: inline-block;
+      text-align: center;
     }
 
     .topcontent img {
-        margin-top: 2em;
-        margin-bottom: -2em;
+      margin-top: 2em;
+      margin-bottom: -2em;
     }
 
     @media (min-width: 600px) and (orientation: landscape) {
-        img {
-            max-width: 20%;
-        }
+      img {
+        max-width: 20%;
+      }
     }
     @media (min-width: 724px) {
-        .topcontent, .inputpeople {
-            min-height: 75vh;
-            margin-top: 10vh;
-        }
+      .topcontent,
+      .inputpeople {
+        min-height: 75vh;
+        margin-top: 10vh;
+      }
     }
     .marketing {
-        background: white;
+      background: white;
     }
+  </style>
 
+  <body>
+    <nav class="nav">
+      <div class="nav-left">
+        <a class="nav-item" href="/"> Gift Exchange </a>
+      </div>
 
-</style>
-
-<body>
-<nav class="nav">
-    <div class="nav-left">
-        <a class="nav-item" href="/">
-            Gift Exchange
+      <div class="nav-center">
+        <a class="nav-item" href="/"> Home </a>
+        <a class="nav-item" href="/history"> History </a>
+        <a
+          class="nav-item"
+          href="https://github.com/yosukesuzuki/gift-exchange-webapp"
+        >
+          Github
         </a>
-    </div>
-
-    <div class="nav-center">
-        <a class="nav-item" href="/">
-            Home
-        </a>
-        <a class="nav-item" href="/history">
-            History
-        </a>
-        <a class="nav-item" href="https://github.com/yosukesuzuki/gift-exchange-webapp">
-            Github
-        </a>
-    </div>
-</nav>
-<div class="content">
-    {% block content %}
-    {% endblock %}
-</div>
-<footer class="footer">
-    <div>Icons made by <a href="http://www.freepik.com" title="Freepik">Freepik</a> from <a href="http://www.flaticon.com" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
-</footer>
-</body>
+      </div>
+    </nav>
+    <div class="content">{% block content %} {% endblock %}</div>
+    <footer class="footer">
+      <div>
+        Icons made by
+        <a href="http://www.freepik.com" title="Freepik">Freepik</a> from
+        <a href="http://www.flaticon.com" title="Flaticon">www.flaticon.com</a>
+        is licensed by
+        <a
+          href="http://creativecommons.org/licenses/by/3.0/"
+          title="Creative Commons BY 3.0"
+          target="_blank"
+          >CC 3.0 BY</a
+        >
+      </div>
+    </footer>
+  </body>
 </html>
